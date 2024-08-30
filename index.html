@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Planillas en PDF</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.14/jspdf.plugin.autotable.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Generador de Planillas en PDF</h1>
+
+        <form id="planillaForm">
+            <div class="form-group">
+                <label for="nombre">Nombre y Apellido:</label>
+                <input type="text" id="nombre" required>
+            </div>
+
+            <div class="form-group">
+                <label for="startDate">Fecha de Inicio:</label>
+                <input type="date" id="startDate" required>
+            </div>
+
+            <div class="form-group">
+                <label for="endDate">Fecha de Fin:</label>
+                <input type="date" id="endDate" required>
+            </div>
+
+            <div class="form-group">
+                <label for="consumisionTotal">Consumición Total:</label>
+                <input type="number" id="consumisionTotal" required>
+            </div>
+
+            <div class="form-group">
+                <label for="quincena">Seleccionar Quincena:</label>
+                <select id="quincena" required>
+                    <option value="PRIMERA QUINCENA">PRIMERA QUINCENA</option>
+                    <option value="SEGUNDA QUINCENA">SEGUNDA QUINCENA</option>
+                </select>
+            </div>
+
+            <button type="button" onclick="generarPlanilla()">Generar Planilla</button>
+        </form>
+
+        <div id="planilla" style="display:none;">
+            <h2 id="nombrePlanilla"></h2>
+            <h3 id="quincenaPlanilla"></h3>
+            <h4 id="anoPlanilla"></h4>
+            <table id="tablaPlanilla">
+                <thead>
+                    <tr>
+                        <th>FECHA</th>
+                        <th>CONSUMICIÓN TOTAL</th>
+                        <th>FUNCIONARIO</th>
+                        <th>L'ACERIE</th>
+                        <th>FIRMA</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+            <button type="button" onclick="descargarPDF()">Descargar en PDF</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -3,6 +3,7 @@ body {
     background-color: #f4f4f4;
     margin: 0;
     padding: 20px;
+    padding-bottom: 50px; /* Espacio adicional para el pie de página */
 }
 
 .container {
@@ -75,4 +76,17 @@ th {
 
 .darker-gray-background {
     background-color: #cccccc;
+}
+
+/* Estilo del pie de página */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    border-top: 1px solid #ddd;
+    font-size: 12px;
+    color: #333;
 }
